@@ -22,6 +22,9 @@ Feb 2021
     Visual Studio Code  
     <https://azure.microsoft.com/ja-jp/products/visual-studio-code/>
 
+    - 拡張機能：C# for Visual Studio Code  
+      <https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp>
+
   - Git のインストール  
     <https://git-scm.com/>
 
@@ -42,18 +45,17 @@ Feb 2021
 
 # **GitHub リポジトリのフォーク**
 
-  - Web ブラウザを起動し、ワークショップのリポジトリを表示  
-    <https://github.com/hiroyay-ms/Git-Training-for-Beginner>
+- Web ブラウザを起動し、ワークショップのリポジトリを表示  
+  <https://github.com/hiroyay-ms/Git-Training-for-Beginner>
+- 画面右上の **fork** をクリック
 
-  - 画面右上の **fork** をクリック
+  <img src="images/github-fork-01.png" />
 
-    <img src="images/github-fork-01.png" />
+- リポジトリが複製されていることを確認
 
-  - リポジトリが複製されていることを確認
+  <img src="images/github-fork-02.png" />
 
-    <img src="images/github-fork-02.png" />
-
-    ※ hiroyay-demo-org の箇所に自身の github アカウント名が表示されていることを確認
+  ※ hiroyay-demo-org の箇所に自身の github アカウント名が表示されていることを確認
 
 <br />
 
@@ -61,206 +63,206 @@ Feb 2021
 
 ## リソース グループの作成
 
-  - Web ブラウザを起動し **[Azure ポータル](https://portal.azure.com)** を表示
+- Web ブラウザを起動し **[Azure ポータル](https://portal.azure.com)** を表示
 
-  - 画面上部の "**＋リソースの作成**" をクリック
+- 画面上部の "**＋リソースの作成**" をクリック
 
-    <img src="images/create-resource.png" />
+  <img src="images/create-resource.png" />
 
-  - 検索ボックスに **Resource Group** と入力  
+- 検索ボックスに **Resource Group** と入力  
     表示される候補より **Resource Group** を選択
 
-    <img src="images/resource-group-01.png" />
+  <img src="images/resource-group-01.png" />
 
-  - "**作成**" をクリック
+- "**作成**" をクリック
 
-    <img src="images/resource-group-02.png" />
+  <img src="images/resource-group-02.png" />
 
-  - **リソース グループ名** を入力し, **リージョン** を選択  
-    "**確認および作成**" をクリック
+- **リソース グループ名** を入力し, **リージョン** を選択  
+  "**確認および作成**" をクリック
 
-    <img src="images/resource-group-03.png" />  
-    ※リソース グループ名、リージョンは任意
+  <img src="images/resource-group-03.png" />  
+  ※リソース グループ名、リージョンは任意
 
-  - 入力内容に不備がないことを確認し "**作成**" をクリック
+- 入力内容に不備がないことを確認し "**作成**" をクリック
 
-    <img src="images/resource-group-04.png" />
+  <img src="images/resource-group-04.png" />
 
-  - リソース グループの作成を確認
+- リソース グループの作成を確認
 
-    <img src="images/resource-group-05.png" />
+  <img src="images/resource-group-05.png" />
 
 ## Web Apps の作成
 
-  - **[Azure ポータル](https://portal.azure.com)** のホーム画面を表示
+- **[Azure ポータル](https://portal.azure.com)** のホーム画面を表示
 
-  - 画面上部の "**＋リソースの作成**" をクリック
+- 画面上部の "**＋リソースの作成**" をクリック
 
-    <img src="images/create-resource.png" />
+  <img src="images/create-resource.png" />
 
-  - **Web アプリ** を選択
+- **Web アプリ** を選択
 
-    <img src="images/web-apps-01.png" />
+  <img src="images/web-apps-01.png" />
 
-  - **Web アプリの作成**  
-    **基本** タブ
-    - **リソース グループ**: 先の手順で作成したものを選択
-    - **名前**: （任意）※インターネットに公開できるユニークな名前
-    - **公開**: コード
-    - **ランタイム スタック**: .NET Core 3.1 (LTS)
-    - **オペレーティング システム**: Windows
-    - **地域**: （任意）
-    - **App Service プラン**: （新規作成）名前は任意
-    - **SKU とサイズ**: Premium V3 P1V3
+- **Web アプリの作成**  
+  **基本** タブ
+  - **リソース グループ**: 先の手順で作成したものを選択
+  - **名前**: （任意）※インターネットに公開できるユニークな名前
+  - **公開**: コード
+  - **ランタイム スタック**: .NET Core 3.1 (LTS)
+  - **オペレーティング システム**: Windows
+  - **地域**: （任意）
+  - **App Service プラン**: （新規作成）名前は任意
+  - **SKU とサイズ**: Premium V3 P1V3
 
-      <img src="images/web-apps-02.png" />  
+    <img src="images/web-apps-02.png" />  
 
-      ※App Service プランは新規作成をクリックし、名前を入力  
-      <img src="images/web-apps-03.png" />
+    ※App Service プランは新規作成をクリックし、名前を入力  
+    <img src="images/web-apps-03.png" />
 
-      ※SKU とサイズは **サイズを変更します** をクリックし P1V3 を選択  
-      <img src="images/web-apps-04.png" />
+    ※SKU とサイズは **サイズを変更します** をクリックし P1V3 を選択  
+    <img src="images/web-apps-04.png" />
 
-      必要事項を入力、選択後 "**次: 監視** をクリック
+    必要事項を入力、選択後 "**次: 監視** をクリック
 
-    **監視** タブ
-    - **Applicatoin Insights を有効にする**: いいえ
+  **監視** タブ
+  - **Applicatoin Insights を有効にする**: いいえ
 
-      <img src="images/web-apps-05.png" />
+    <img src="images/web-apps-05.png" />
 
-      ※"**確認および作成**" をクリック
+    ※"**確認および作成**" をクリック
 
-    **確認および作成** タブ
+  **確認および作成** タブ
 
-    - 入力内容に誤りがないことを確認し "**作成**" をクリック
+  - 入力内容に誤りがないことを確認し "**作成**" をクリック
 
-      <img src="images/web-apps-06.png" />
+    <img src="images/web-apps-06.png" />
 
-  - リソースの展開が正常に完了したことを確認し、"**リソースへ移動**" をクリック
+- リソースの展開が正常に完了したことを確認し、"**リソースへ移動**" をクリック
 
-    <img src="images/web-apps-07.png" />
+  <img src="images/web-apps-07.png" />
 
 ## Web Apps の展開設定
 
-  - Web Apps の管理ブレードを表示  
-    左側のメニューから "**デプロイ センター**" をクリック
+- Web Apps の管理ブレードを表示  
+  左側のメニューから "**デプロイ センター**" をクリック
 
-    <img src="images/web-apps-08.png" />
+  <img src="images/web-apps-08.png" />
 
-  - "**設定**" をクリック
+- "**設定**" をクリック
 
-    <img src="images/web-apps-09.png" />
+  <img src="images/web-apps-09.png" />
 
-  - ソースから"**GitHub**" を選択し、"**承認する**" をクリック
+- ソースから"**GitHub**" を選択し、"**承認する**" をクリック
 
-    <img src="images/web-apps-10.png" />
+  <img src="images/web-apps-10.png" />
 
-  - GitHub アカウント名とパスワードを入力し、"**Sign in**" をクリック
+- GitHub アカウント名とパスワードを入力し、"**Sign in**" をクリック
 
-    <img src="images/web-apps-11.png" />
+  <img src="images/web-apps-11.png" />
 
-  - GitHub リポジトリ、ブランチを選択
-    - **組織**: GitHub アカウント名
-    - **リポジトリ**: fork したリポジトリ名 (Git-Training-for-Beginner)
-    - **ブランチ**: main
+- GitHub リポジトリ、ブランチを選択
+  - **組織**: GitHub アカウント名
+  - **リポジトリ**: fork したリポジトリ名 (Git-Training-for-Beginner)
+  - **ブランチ**: main
 
-    <img src="images/web-apps-12.png" />
+  <img src="images/web-apps-12.png" />
 
-  - "**ファイルのプレビュー**" をクリック  
-    ※GitHub から Azure Web Apps へアプリケーションを展開するワークフローの内容を確認
+- "**ファイルのプレビュー**" をクリック  
+  ※GitHub から Azure Web Apps へアプリケーションを展開するワークフローの内容を確認
 
-    <img src="images/web-apps-13.png" />
+  <img src="images/web-apps-13.png" />
 
-    内容を確認後 "**Close**" をクリックし、プレビュー画面を閉じる
+  内容を確認後 "**Close**" をクリックし、プレビュー画面を閉じる
 
-  - "**保存**" をクリックし変更内容を反映  
-    ※GitHub のシークレットに発行プロファイルを登録  
-    ※GitHub Actions のワークフローを作成
+- "**保存**" をクリックし変更内容を反映  
+  ※GitHub のシークレットに発行プロファイルを登録  
+  ※GitHub Actions のワークフローを作成
 
-    <img src="images/web-apps-14.png" />
+  <img src="images/web-apps-14.png" />
 
 ## GitHub Actions ワークフローの構成
 
-  - リポジトリを表示  
-    "**Settings**" をクリック
+- リポジトリを表示  
+  "**Settings**" をクリック
 
-    <img src="images/github-actions-01.png" />
+  <img src="images/github-actions-01.png" />
 
-  - "**Secrets**" をクリック  
-    ※Repository secrets に発行プロファイル情報が登録されていることを確認
+- "**Secrets**" をクリック  
+  ※Repository secrets に発行プロファイル情報が登録されていることを確認
 
-    <img src="images/github-actions-02.png" />
+  <img src="images/github-actions-02.png" />
 
-  - "**Code**" をクリック  
-    **.github/workflows** へ移動し main_app_XXXX.yml を選択  
-    ※ファイル名は作成した Web Apps の名前により異なります。
+- "**Code**" をクリック  
+  **.github/workflows** へ移動し main_app_XXXX.yml を選択  
+  ※ファイル名は作成した Web Apps の名前により異なります。
 
-    <img src="images/github-actions-03.png" />
+  <img src="images/github-actions-03.png" />
 
-  - 鉛筆マークのアイコンをクリック
+- 鉛筆マークのアイコンをクリック
 
-    <img src="images/github-actions-04.png" />
+  <img src="images/github-actions-04.png" />
 
-  - Editor が起動し、ワークフロー ファイル (.yml) の内容が表示
+- Editor が起動し、ワークフロー ファイル (.yml) の内容が表示
 
-    <img src="images/github-actions-05.png" />
+  <img src="images/github-actions-05.png" />
 
-  - 11 行目を改行し、以下のコードを挿入
+- 11 行目を改行し、以下のコードを挿入
 
-    ```
-    env:
-      APP_PATH: './src/Web'
-    ```
-    ※ASP.NET Core MVC のプロジェクト ファイルへのパスを追加
+  ```
+  env:
+    APP_PATH: './src/Web'
+  ```
+  ※ASP.NET Core MVC のプロジェクト ファイルへのパスを追加
 
-  - dotnet build コマンドを以下に変更
+- dotnet build コマンドを以下に変更
 
-     ```
-     dotnet build ${{ env.APP_PATH }} --configuration Release
-     ```
-     ※追加した変数を build の後に追加
+   ```
+   dotnet build ${{ env.APP_PATH }} --configuration Release
+   ```
+   ※追加した変数を build の後に追加
 
-  - dotnet publish コマンドを以下に変更
+- dotnet publish コマンドを以下に変更
 
-    ```
-    dotnet publish ${{ env.APP_PATH }} -c Release -o ${{env.DOTNET_ROOT}}/myapp
-    ```
-    ※追加した変数を publish の後に追加
+  ```
+  dotnet publish ${{ env.APP_PATH }} -c Release -o ${{env.DOTNET_ROOT}}/myapp
+  ```
+  ※追加した変数を publish の後に追加
 
-    <br />
+  <br />
 
-    ※変更後のワークフロー ファイル（全文）
-    ```
-    ```
+  ※変更後のワークフロー ファイル（全文）
+  ```
+  ```
 
-  - "**Start commit**" をクリック  
-    "**Commit changes**" をクリックし、変更を反映
+- "**Start commit**" をクリック  
+  "**Commit changes**" をクリックし、変更を反映
 
-    <img src="images/github-actions-06.png" />
+  <img src="images/github-actions-06.png" />
 
-  - "**Actions**" タブをクリック
+- "**Actions**" タブをクリック
 
-    <img src="images/github-actions-07.png" />
+  <img src="images/github-actions-07.png" />
 
-  - 起動しているワークフローを選択  
-    ※ワークフローが push イベントをトリガーに起動するため、.yml ファイル保存時にワークフローが起動
+- 起動しているワークフローを選択  
+  ※ワークフローが push イベントをトリガーに起動するため、.yml ファイル保存時にワークフローが起動
 
-    <img src="images/github-actions-08.png" />
+  <img src="images/github-actions-08.png" />
 
-  - ワークフローの実行状況を確認
+- ワークフローの実行状況を確認
 
-    <img src="images/github-actions-09.png" />
+  <img src="images/github-actions-09.png" />
 
-    <img src="images/github-actions-10.png" />
+  <img src="images/github-actions-10.png" />
 
-  - 正常に終了することを確認
+- 正常に終了することを確認
 
-    <img src="images/github-actions-11.png" />
+  <img src="images/github-actions-11.png" />
 
-  - [**Azure ポータル**](https://portal.azure.com) を表示し、Web Apps の管理ブレードから "**概要**" を選択  
-    "**URL**" をクリックし、新しいタブでアプリケーションを表示
+- [**Azure ポータル**](https://portal.azure.com) を表示し、Web Apps の管理ブレードから "**概要**" を選択  
+  "**URL**" をクリックし、新しいタブでアプリケーションを表示
 
-    <img src="images/web-apps-15.png" />
+  <img src="images/web-apps-15.png" />
 
 <br />
 
@@ -281,85 +283,341 @@ Feb 2021
 
 ※[Visual Studio をご利用の場合はこちら](#visual-studio-によるリポジトリの複製)
 
-  - Web ブラウザを起動し、GitHub リポジトリを表示  
-    "**Code**" をクリックし URL をコピー
+- Web ブラウザを起動し、GitHub リポジトリを表示  
+  "**Code**" をクリックし URL をコピー
 
-    <img src="images/git-clone-url-copy-01.png" />
+  <img src="images/git-clone-url-copy-01.png" />
 
-  - Visual Studio Code を起動  
-    画面左上のアイコンをクリックし Explorer を表示
+- Visual Studio Code を起動  
+  画面左上のアイコンをクリックし Explorer を表示
 
-    <img src="images/git-clone-vscode-01.png" />
+  <img src="images/git-clone-vscode-01.png" />
 
-  - "**Clone Repository**" をクリック
+- "**Clone Repository**" をクリック
 
-    <img src="images/git-clone-vscode-02.png" />
+  <img src="images/git-clone-vscode-02.png" />
 
-  - 画面上部に表示されるコマンド パレットにコピーした URL を貼り付け Enter キーを押下
+- 画面上部に表示されるコマンド パレットにコピーした URL を貼り付け Enter キーを押下
 
-    <img src="images/git-clone-vscode-03.png" />
+  <img src="images/git-clone-vscode-03.png" />
   
-  - エクスプローラーでリポジトリの複製先となるフォルダを選択（任意）  
-    "**Select Repository Location**" をクリック
+- エクスプローラーでリポジトリの複製先となるフォルダを選択（任意）  
+  "**Select Repository Location**" をクリック
 
-    <img src="images/git-clone-vscode-04.png" />
+  <img src="images/git-clone-vscode-04.png" />
 
-  - 複製完了後、画面下部にメッセージが表示  
-    "**Open**" をクリック
+- 複製完了後、画面下部にメッセージが表示  
+  "**Open**" をクリック
 
-    <img src="images/git-clone-vscode-05.png" />
+  <img src="images/git-clone-vscode-05.png" />
 
-  - "**src/Web**" に Web アプリケーションのソース コードが複製されていることを確認
+- "**src/Web**" に Web アプリケーションのソース コードが複製されていることを確認
 
-    <img src="images/git-clone-vscode-06.png" />
+  <img src="images/git-clone-vscode-06.png" />
+
+- "**F5**" キーを押下、または "**Run**" - "**Start**" をクリックし、アプリケーションをデバッグ実行
+
+  <img src="images/git-clone-vscode-07.png" />
+
+- ブラウザを起動し、アプリケーションを表示  
+  ※https://localhost:5001
+
+  <img src="images/git-clone-vscode-08.png" />
+
+<br />
+
+[次の手順: ブランチの作成](#ブランチ作成--Visual-Studio-Code)
+
+<br />
 
 ### Visual Studio によるリポジトリの複製
 
-  - Visual Studio を起動  
-    "**リポジトリのクローン**" を選択
+- Visual Studio を起動  
+  "**リポジトリのクローン**" を選択
 
-    <img src="images/git-clone-visual-studio-01.png" />
+  <img src="images/git-clone-visual-studio-01.png" />
 
-  - "**GitHub**" をクリック
+- "**GitHub**" をクリック
 
-    <img src="images/git-clone-visual-studio-02.png" />
+  <img src="images/git-clone-visual-studio-02.png" />
 
-  - "**ブラウザーでサインインします**" をクリック
+- "**ブラウザーでサインインします**" をクリック
 
-    <img src="images/git-clone-visual-studio-03.png" />
+  <img src="images/git-clone-visual-studio-03.png" />
 
-    ※Web ブラウザーでサインインを実行  
-    ※すでに GitHub にサインインしている場合はプロファイル ページが表示
+  ※Web ブラウザーでサインインを実行  
+  ※すでに GitHub にサインインしている場合はプロファイル ページが表示
 
-  - クローンするリポジトリを選択し "**複製**" をクリック
+- クローンするリポジトリを選択し "**複製**" をクリック
 
-    <img src="images/git-clone-visual-studio-04.png" />
+  <img src="images/git-clone-visual-studio-04.png" />
 
-  - ソリューション エクスプローラーにてコードが複製されたことを確認
+- ソリューション エクスプローラーにてコードが複製されたことを確認
 
-    <img src="images/git-clone-visual-studio-05.png" />
+  <img src="images/git-clone-visual-studio-05.png" />
 
-## Web アプリの更新～ GitHub リポジトリへのプッシュ
+  ※フォルダ ビューの場合は、Web.sln ファイルをダブルクリックしプロジェクトを読み込み
 
-### Visual Studio Code によるアプリケーションの更新
+- "**F5**" キーを押下、または "**デバッグ**" - "**デバッグの開始**" を実行
 
-※[Visual Studio をご利用の場合はこちら](#visual-studio-によるアプリケーションの更新)
+  <img src="images/git-clone-visual-studio-06.png" />
 
-  - "**F5**" キーを押下し、アプリケーションを実行
+- ブラウザが起動し、アプリケーションが表示されることを確認
 
-  - "**appsettings.Development.json**" を追加
+  <img src="images/git-clone-visual-studio-07.png" />
 
-### Visual Studio によるアプリケーションの更新
+<br />
 
-## アプリケーション構成の追加
+[次の手順: ブランチの作成](#ブランチ作成--Visual-Studio)
 
-## KeyVault の作成
+<br />
 
-## シークレットの追加
+## ブランチの作成、Web アプリの更新～ GitHub リポジトリへのプッシュ
 
-## マネージド ID の作成
+### ブランチ作成 -Visual Studio Code
 
-## KeyVault 参照の構成
+- 画面左下の "**main**" をクリック
+
+  <img src="images/create-new-branch-vscode-01.png" />
+
+- 画面上部のコマンド パレットにて "**+ Create new branch...**" を選択
+
+  <img src="images/create-new-branch-vscode-02.png" />
+
+- Branch name (任意) を入力
+
+  <img src="images/create-new-branch-vscode-03.png" />
+
+- 画面左下のブランチ名が入力した名前に変更されていることを確認
+
+  <img src="images/create-new-branch-vscode-04.png" />
+
+<br />
+
+[次の手順: アプリケーションの更新](#アプリケーションの更新--Visual-Studio-Code)
+
+<br />
+
+### ブランチ作成 -Visual Studio
+
+- 画面右下のブランチ名をクリックし、"**新しいブランチ**" を選択
+
+  <img src="images/create-new-branch-visual-studio-01.png" />
+
+- ブランチ名 (任意) を入力し、"**作成**" をクリック
+
+  <img src="images/create-new-branch-visual-studio-02.png" />
+
+- 画面右下のブランチ名が入力した名前に変更されていることを確認
+
+  <img src="images/create-new-branch-visual-studio-03.png" />
+
+<br />
+
+[次の手順: アプリケーションの更新](#アプリケーションの更新--Visual-Studio)
+
+<br />
+
+### アプリケーションの更新 -Visual Studio Code
+
+- エクスプローラーで "**Web**" を右クリックし "**New File**" を選択
+
+  <img src="images/update-webapp-vscode-01.png" />
+
+- "appsettings.Development.json" ファイルを追加
+
+  <img src="images/update-webapp-vscode-02.png" />
+
+- appsettings.Development.json ファイルをエディタで開き、以下の内容に変更
+
+  ```
+  {
+    "MyKey": "Hello World"
+  }
+  ```
+
+  ※キーの値は任意で設定可
+
+- "**Controllers**" - "**HomeController.cs**" を選択
+
+  <img src="images/update-webapp-vscode-03.png" />  
+  ※エディタでファイルが開く
+
+- 26, 27 行目のコメントを解除
+
+  <img src="images/update-webapp-vscode-04.png" />
+
+- "**Views**" - "**Home**" - "**Index.cshtml**" を選択  
+  ※エディタでファイルが開く
+
+  <img src="images/update-webapp-vscode-05.png" />
+
+- 10, 16 行目のコメントを解除
+
+  <img src="images/update-webapp-vscode-06.png" />
+
+- "**HomeController.cs**" の 26 行目にブレーク ポイントを設定
+
+  <img src="images/update-webapp-vscode-07.png" />
+
+- "**F5**" キーを押下、または "**Run**" - "**Start Debugging**" をクリックし、アプリケーションのデバッグ実行を開始
+
+  ※Web ブラウザを起動し "**https://localhost:5001**" へアクセス
+
+  ※設定したブレーク ポイントで停止
+
+  <img src="images/update-webapp-vscode-08.png" />
+
+  ※F10 キーを押下し、ステップ実行  
+
+  <img src="images/update-webapp-vscode-09.png" />  
+  ※myKeyValue に appsettings.Development.json に設定した値が格納されていることを確認
+
+  ※F5 キーを押下しデバッグ実行を続行
+
+  ※アプリケーションが表示
+
+  <img src="images/update-webapp-vscode-10.png" />
+
+- デバッグ実行を停止
+
+  <img src="images/update-webapp-vscode-11.png" />
+
+<br />
+
+[次の手順: リモート リポジトリへのプッシュ](#リモート-リポジトリへのプッシュ--Visual-Studio-Code)
+
+<br />
+    
+### アプリケーションの更新 -Visual Studio
+
+- Web プロジェクトを右クリック  
+  "**追加**" - "**新しい項目**" を選択
+
+  <img src="images/update-webapp-visual-studio-01.png" />
+
+- "**JSON ファイル**" を選択  
+  名前に "**appsettings.Development.json**" と入力し "**追加**" をクリック
+
+  <img src="images/update-webapp-visual-studio-02.png" />
+
+- appsettings.Development.json ファイルをエディタで開き、以下の内容に変更
+
+  ```
+  {
+    "MyKey": "Hello World"
+  }
+  ```
+
+  ※キーの値は任意で設定可
+
+- ソリューション エクスプローラーで "**Controllers**" - "**HomeControllers.cs**" を選択
+  ※エディタでファイルが開く
+
+  <img src="images/update-webapp-visual-studio-03.png" />
+
+- 26, 27 行目のコメントを解除
+
+  <img src="images/update-webapp-visual-studio-04.png" />
+
+- ソリューション エクスプローラーで "**Views**" - "**Home**" - "**Index.cshtml**" を選択  
+  ※エディタでファイルが開く
+
+  <img src="images/update-webapp-visual-studio-05.png" />
+
+- 10, 16 行目のコメントを解除
+
+  <img src="images/update-webapp-visual-studio-06.png" />
+
+- "**HomeController.cs**" の 26 行目にブレーク ポイントを設定
+
+  <img src="images/update-webapp-visual-studio-07.png" />
+
+- "**F5**" キーを押下、または "**デバッグ**" - "**デバッグの開始**" を実行
+
+  ※Web ブラウザが起動
+
+  ※設定したブレーク ポイントで停止
+
+  <img src="images/update-webapp-visual-studio-08.png" />
+
+  ※F10 キーを押下し、ステップ実行  
+
+  <img src="images/update-webapp-visual-studio-09.png" />  
+  ※myKeyValue に appsettings.Development.json に設定した値が格納されていることを確認
+
+  ※F5 キーを押下しデバッグ実行を続行
+
+  ※アプリケーションが表示
+
+  <img src="images/update-webapp-visual-studio-10.png" />
+  
+  ※Web ブラウザを閉じ、デバッグ実行を停止
+
+<br />
+
+[次の手順: リモート リポジトリへのプッシュ](#リモート-リポジトリへのプッシュ--Visual-Studio)
+
+<br />
+
+### リモート リポジトリへのプッシュ -Visual Studio Code
+
+- 画面左のアイコンをクリックし "**Source Control**" へ移動  
+  メッセージを入力し、"**✓**" をクリックしローカル リポジトリへコミットを実行
+
+  <img src="images/update-webapp-vscode-12.png" />
+
+- "**...**" アイコンをクリックし "**Push**" を選択
+
+  <img src="images/update-webapp-vscode-13.png" />
+
+  ※メッセージが表示される場合 "**OK**" をクリック
+
+  <img src="images/update-webapp-vscode-14.png" />
+
+<br />
+
+[次の手順へ](#Pull-Request-の作成、マージ～アプリケーションの展開)
+
+<br />
+
+### リモート リポジトリへのプッシュ -Visual Studio
+
+- "**表示**" - "**Git 変更**" をクリック
+
+  <img src="images/update-webapp-visual-studio-11.png" />
+
+- メッセージを入力し "**すべてをコミット**" をクリックし、ローカル リポジトリへコミット 
+
+  <img src="images/update-webapp-visual-studio-12.png" />
+
+- "↑" アイコンをクリックし、リモート リポジトリへプッシュ
+
+  <img src="images/update-webapp-visual-studio-13.png" />
+
+- 正常にプッシュされたことを確認
+
+  <img src="images/update-webapp-visual-studio-14.png" />
+
+<br />
+
+[次の手順へ](#Pull-Request-の作成、マージ～アプリケーションの展開)
+
+<br />
+
+## Pull Request の作成、マージ～アプリケーションの展開
+
+## アプリケーション構成
+
+### アプリケーション構成の追加
+
+### KeyVault の作成
+
+### シークレットの追加
+
+### マネージド ID の作成
+
+### KeyVault 参照の構成
 
 <br />
 
