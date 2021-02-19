@@ -6,6 +6,61 @@ Feb 2021
 <br />
 
 **Contents**
+- [GitHub リポジトリのフォーク](#GitHub-リポジトリのフォーク)
+
+- [Web Apps の作成～アプリケーションの展開](#Azure-Web-Apps-の作成～アプリケーションの展開)
+
+  - [リソース グループの作成](#リソース-グループの作成)
+
+  - [Web Apps の作成](#Web-Apps-の作成)
+
+  - [Web Apps の展開設定 (デプロイ センター)](#Web-Apps-の展開設定)
+
+  - [GitHub Actions ワークフローの構成](#GitHub-Actions-ワークフローの構成)
+
+- [Web アプリの更新～展開, KeyVault 参照の使用](#Web-アプリの更新～展開,-KeyVault-参照の使用)
+
+  - リポジトリのクローン
+
+    - [Visual Studio Code](#リポジトリの複製--Visual-Studio-Code)
+
+    - [Visual Studio](#リポジトリの複製--Visual-Studio)
+
+  - [ブランチの作成、Web アプリの更新～GitHub リポジトリへのプッシュ](#ブランチの作成、Web-アプリの更新～GitHub-リポジトリへのプッシュ)
+
+    - ブランチの作成
+
+      - [Visual Studio Code](#ブランチ作成--Visual-Studio-Code)
+
+      - [Visual Studio](#ブランチ作成--Visual-Studio)
+
+    - アプリケーションの更新
+
+      - [Visual Studio Code](#アプリケーションの更新--Visual-Studio-Code)
+
+      - [Visual Studio](#アプリケーションの更新--Visual-Studio)
+
+    - リモート リポジトリへのプッシュ
+
+      - [Visual Studio Code](#リモート-リポジトリへのプッシュ--Visual-Studio-Code)
+
+      - [Visual Studio](#リモート-リポジトリへのプッシュ--Visual-Studio)
+
+  - [Pull Request の作成、マージ～アプリケーションの展開](#Pull-Request-の作成、マージ～アプリケーションの展開)
+
+  - [Web Apps の構成](#アプリケーション構成)
+
+    - [アプリケーション設定の追加](#アプリケーション設定の追加)
+
+    - [KeyVault の作成](#KeyVault-の作成)
+
+    - [シークレットの追加](#シークレットの追加)
+
+    - [マネージド ID の作成](#マネージド-ID-の作成)
+
+    - [アクセス ポリシーの設定](#アクセス-ポリシーの設定)
+
+    - [KeyVault 参照の構成](#KeyVault-参照の構成)
 
 <br />
 
@@ -233,7 +288,43 @@ Feb 2021
 
   ※変更後のワークフロー ファイル（全文）
   ```
-  ```
+  name: Build and deploy ASP.Net Core app to Azure Web App - app-CloudWorkshop
+
+  on:
+    push:
+      branches:
+        - main
+    workflow_dispatch:
+
+  env:
+    APP_PATH: './src/Web'
+
+  jobs:
+    build-and-deploy:
+      runs-on: windows-latest
+
+      steps:
+      - uses: actions/checkout@master
+
+      - name: Set up .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '3.1.301'
+
+      - name: Build with dotnet
+        run: dotnet build ${{ env.APP_PATH }} --configuration Release
+
+      - name: dotnet publish
+        run: dotnet publish ${{ env.APP_PATH }} -c Release -o ${{env.DOTNET_ROOT}}/myapp
+
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: 'app-CloudWorkshop'
+          slot-name: 'production'
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_070d73f773d6434689608ad093d6a436 }}
+          package: ${{env.DOTNET_ROOT}}/myapp
+   ```
 
 - "**Start commit**" をクリック  
   "**Commit changes**" をクリックし、変更を反映
@@ -279,9 +370,9 @@ Feb 2021
 
 ## リポジトリのクローン
 
-### Visual Studio Code によるリポジトリの複製
+### リポジトリの複製 -Visual Studio Code
 
-※[Visual Studio をご利用の場合はこちら](#visual-studio-によるリポジトリの複製)
+※[Visual Studio をご利用の場合はこちら](#リポジトリの複製--Visual-Studio)
 
 - Web ブラウザを起動し、GitHub リポジトリを表示  
   "**Code**" をクリックし URL をコピー
@@ -330,7 +421,7 @@ Feb 2021
 
 <br />
 
-### Visual Studio によるリポジトリの複製
+### リポジトリの複製 -Visual Studio
 
 - Visual Studio を起動  
   "**リポジトリのクローン**" を選択
@@ -372,7 +463,7 @@ Feb 2021
 
 <br />
 
-## ブランチの作成、Web アプリの更新～ GitHub リポジトリへのプッシュ
+## ブランチの作成、Web アプリの更新～GitHub リポジトリへのプッシュ
 
 ### ブランチ作成 -Visual Studio Code
 
@@ -607,17 +698,279 @@ Feb 2021
 
 ## Pull Request の作成、マージ～アプリケーションの展開
 
+- 自身の GitHub アカウントの fork したリポジトリを表示
+
+- "**Compare & pull request**" をクリック 
+
+  <img src="images/github-pull-request-01.png" />
+
+  ※メッセージが表示されていない場合は、"**Pull requests**" タブから "**New pull request**" をクリック
+
+  <img src="images/github-pull-request-new.png" />
+
+- "Create pull request" をクリック
+
+  <img src="images/github-pull-request-02.png" />
+
+- "Merge pull request" をクリック
+
+  <img src="images/github-pull-request-03.png" />
+
+- "Confirm merge" をクリック
+
+  <img src="images/github-pull-request-04.png" />
+
+- ステータスが Merged となり、変更が main ブランチに反映されたことを確認
+
+  <img src="images/github-pull-request-05.png" />
+
+- "**Actions**" タブへ移動し、ワークフローの起動を確認  
+  ※承認操作によりソース コードの変更が main ブランチに Push されたため、ワークフローが起動
+
+  <img src="images/github-pull-request-06.png" />
+
+- ワークフローが正常に完了することを確認
+
+  <img src="images/github-pull-request-complete-job.png" />
+
+<br />
+
 ## アプリケーション構成
 
-### アプリケーション構成の追加
+### アプリケーション設定の追加
+
+- [Azure ポータル](https://portal.azure.com) へ移動
+
+- Web Apps の管理ブレードを表示
+
+- 左側のメニューより "**構成**" をクリック  
+  "**＋ 新しいアプリケーション設定**" をクリック
+
+  <img src="images/web-apps-application-configuration-01.png" />
+
+- アプリケーション設定の追加/編集画面が開くので、以下の項目を入力し "**OK**" をクリック
+
+  - **名前**: MyKey
+  - "**値**": Hello World (任意)
+
+    <img src="images/web-apps-application-configuration-02.png" />
+
+- 設定がつい枯れていることを確認し "**保存**" をクリック  
+
+    <img src="images/web-apps-application-configuration-03.png" />
+
+- メッセージが表示されるので "**続行**" をクリック
+
+  <img src="images/web-apps-application-configuration-04.png" />
+
+
+  ※設定が適用され、アプリケーションを再起動
+
+- "**概要**" タブへ移動
+
+  <img src="images/web-apps-application-configuration-05.png" />
+
+- アプリケーション設定に追加した値が画面上に表示されることを確認
+
+  <img src="images/web-apps-application-configuration-06.png" />
+
+<br />
 
 ### KeyVault の作成
 
+- [Azure ポータル](https://portal.azure.com) のトップ ページへ移動
+
+- "**＋リソースの作成**" をクリック
+
+  <img src="images/create-resource.png" />
+
+- 新規リソース作成の画面が表示  
+  検索ボックスに "**key vault**" と入力し、表示される候補より "**Key Vault**" を選択
+
+  <img src="images/create-key-vault-01.png" />
+
+- "**作成**" をクリック
+
+  <img src="images/create-key-vault-02.png" />
+
+- キー コンテナーの作成  
+"**基本**" タブ
+
+  - **リソース グループ**: 今回使用するリソース グループを選択
+
+  - **Key Vault 名**: (任意)
+
+    ※あとの項目は既定のまま、"**確認および作成**" をクリック
+
+    <img src="images/create-key-vault-03.png" />
+
+- 入力内容に不備がないことを確認し "**作成**" をクリック
+
+  <img src="images/create-key-vault-04.png" />
+
+- デプロイ完了後 "**リソースに移動**" をクリック
+
+  <img src="images/create-key-vault-05.png" />
+
+<br />
+
 ### シークレットの追加
+
+- KeyVault の管理ブレードを表示  
+  左側のメニューから "**シークレット**" をクリック
+
+  <img src="images/key-vault-secrets-01.png" />
+
+- "**＋生成/インポート**" をクリック
+
+  <img src="images/key-vault-secrets-02.png" />
+
+- シークレットの作成  
+  必要項目の入力を行い "**作成**" をクリック
+
+  - アップロード オプション: 手動 (既定)
+  - **名前**: (任意)
+  - **値**: (任意)　※KeyVault シークレットからの取得と分かるようアプリケーション設定に指定した値と変えること
+  - コンテンツの種類: (既定)
+  - アクティブ化する日の設定: オフ (既定)
+  - 有効期限の設定: オフ (既定)
+  - 有効ですか： はい (既定)
+
+  <img src="images/key-vault-secrets-03.png" />
+
+- シークレットの追加を確認
+
+  <img src="images/key-vault-secrets-04.png" />
+
+<br />
 
 ### マネージド ID の作成
 
+- Web Apps の管理ブレードへ移動  
+  左側のメニューから "**ID**" をクリック
+
+  <img src="images/managed-identity-01.png" />
+
+- "**状態**" を "**オン**" に変更し "**保存**" をクリック
+
+  <img src="images/managed-identity-02.png" />
+
+- システム割り当てマネージド ID を有効にするか確認のメッセージが表示されるので "**はい**" をクリック
+
+  <img src="images/managed-identity-03.png" />
+
+- 作成後の画面で "**オブジェクト ID**" をコピー
+
+  <img src="images/managed-identity-04.png" />
+
+<br />
+
+### アクセス ポリシーの設定
+
+- KeyVault の管理ブレードへ移動  
+  左側のメニューから "**アクセス ポリシー**" をクリック
+
+  <img src="images/key-vault-access-policy-01.png" />
+
+- "**＋アクセス ポリシーの追加**" をクリック
+
+  <img src="images/key-vault-access-policy-02.png" />
+
+- アクセス ポリシーの追加
+
+  - "**シークレットのアクセス許可**" をクリック
+
+    <img src="images/key-vault-access-policy-03.png" />
+
+    ※**取得** にチェック
+
+    <img src="images/key-vault-access-policy-04.png" />
+
+    ※**プリンシパルの選択** の "**選択されていません**" をクリック
+
+    <img src="images/key-vault-access-policy-05.png" />
+
+  - プリンシパルの選択画面で先の手順でコピーした **オブジェクト ID** を貼り付け
+
+    ※検索結果に表示される項目 (Web Apps の名前のオブジェクト) をクリック
+
+    ※選択したアイテムにサービス プリンシパルが表示されたことを確認し "**選択**" をクリック
+
+    <img src="images/key-vault-access-policy-06.png" />
+
+  - **シークレットのアクセス許可**、**プリンシパルの選択**に指定した項目が反映されていることを確認  
+    "**追加**" をクリック
+
+    <img src="images/key-vault-access-policy-07.png" />
+
+- **アプリケーション** に Web Apps が表示されていることを確認し "**保存**" をクリック
+
+  <img src="images/key-vault-access-policy-08.png" />
+
+<br />
+
 ### KeyVault 参照の構成
+
+- KeyVault の管理ブレードの画面左側のメニューから "**シークレット**" を選択  
+  先の手順で登録したシークレットをクリック
+
+  <img src="images/web-apps-using-key-vault-01.png" />
+
+- 現在のバージョンに表示される文字列をクリック
+
+  <img src="images/web-apps-using-key-vault-02.png" />
+
+- シークレット識別子をコピー  
+  ※後の手順で使用するためメモ帳などに貼り付け
+
+  <img src="images/web-apps-using-key-vault-03.png" />
+
+- Web Apps の管理ブレードへ移動  
+  画面左側のメニューから "**構成**" をクリック
+
+  <img src="images/web-apps-using-key-vault-04.png" />
+
+- 先の手順で登録したアプリケーション設定の編集列のアイコンをクリック
+
+  <img src="images/web-apps-using-key-vault-05.png" />
+
+- 値を以下に変更し "**OK**" をクリック
+
+  ```
+  @Microsoft.KeyVault(SecretUri=シークレット識別子)
+  ```
+
+  ※シークレット識別子をコピーしたシークレット識別子に置き換え
+
+  <img src="images/web-apps-using-key-vault-06.png" />
+
+  ※以下の指定でも OK
+  ```
+  @Microsoft.KeyVault(VaultName=キー コンテナ名;SecretName=シークレット名)
+  ```
+
+- "**保存**" をクリック
+
+  <img src="images/web-apps-using-key-vault-07.png" />
+
+- アプリケーションの再起動を求めるメッセージが表示されるので "**続行**" をクリック
+
+  <img src="images/web-apps-using-key-vault-08.png" />
+
+- 設定反映後、アプリケーション設定が KeyVault を参照していることを確認
+
+  <img src="images/web-apps-using-key-vault-09.png" />
+
+  <img src="images/reference-key-vault.png" />
+
+- "**概要**" タブへ移動  
+  **URL** をクリックし、新しいタブでアプリケーションを表示
+
+  <img src="images/web-apps-using-key-vault-10.png" />
+
+- KeyVault に登録したシークレットから値を取得していることを確認
+
+  <img src="images/web-apps-using-key-vault-11.png" />
 
 <br />
 
