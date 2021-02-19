@@ -1,6 +1,6 @@
 ![Microsoft Cloud Workshop](images/ms-cloud-workshop.png)
 
-Hands-on lab
+Hands-on lab  
 Feb 2021
 
 <br />
@@ -72,7 +72,8 @@ Feb 2021
   - Visual Studio または Visual Studio Code のインストール
 
     Visual Studio 2019  
-    <https://visualstudio.microsoft.com/ja/downloads/>
+    <https://visualstudio.microsoft.com/ja/downloads/>  
+    ※バージョンは 16.8 以降
 
     Visual Studio Code  
     <https://azure.microsoft.com/ja-jp/products/visual-studio-code/>
@@ -358,11 +359,17 @@ Feb 2021
 <br />
 
 ### **参考情報**
-- **[Azure リソースの名前付けおよびタグ付けの戦略を作成する](https://docs.microsoft.com/ja-jp/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging)**
+- [**Azure リソースの名前付けおよびタグ付けの戦略を作成する**](https://docs.microsoft.com/ja-jp/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging)
 
-- **[名前付け規則を定義する](https://docs.microsoft.com/ja-jp/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming)**
+- [**名前付け規則を定義する**](https://docs.microsoft.com/ja-jp/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming)
 
-- **[Azure リソースの種類に推奨される省略形](https://docs.microsoft.com/ja-jp/azure/cloud-adoption-framework/ready/azure-best-practices/resource-abbreviations)**  
+- [**Azure リソースの種類に推奨される省略形**](https://docs.microsoft.com/ja-jp/azure/cloud-adoption-framework/ready/azure-best-practices/resource-abbreviations)  
+
+- [**GitHub Actions -ワークフローをトリガーするイベント**](https://docs.github.com/ja/actions/reference/events-that-trigger-workflows)
+
+- [**GitHub Actions -Azure App Service へのデプロイ**](https://docs.github.com/ja/actions/guides/deploying-to-azure-app-service)
+
+- [**GitHub Actions -.NET でのビルドとテスト**](https://docs.github.com/ja/actions/guides/building-and-testing-net)
 
 <br />
 
@@ -958,8 +965,6 @@ Feb 2021
   <img src="images/web-apps-using-key-vault-08.png" />
 
 - 設定反映後、アプリケーション設定が KeyVault を参照していることを確認
-
-  <img src="images/web-apps-using-key-vault-09.png" />
 
   <img src="images/reference-key-vault.png" />
 
