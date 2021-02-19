@@ -941,17 +941,17 @@ Feb 2021
 
   <img src="images/web-apps-using-key-vault-05.png" />
 
-- 値を以下に変更し "**OK**" をクリック
+- 値を変更し "**OK**" をクリック
+
+  <img src="images/web-apps-using-key-vault-06.png" />
 
   ```
   @Microsoft.KeyVault(SecretUri=シークレット識別子)
   ```
-
   ※シークレット識別子をコピーしたシークレット識別子に置き換え
 
-  <img src="images/web-apps-using-key-vault-06.png" />
+  以下の指定でも OK
 
-  ※以下の指定でも OK
   ```
   @Microsoft.KeyVault(VaultName=キー コンテナ名;SecretName=シークレット名)
   ```
