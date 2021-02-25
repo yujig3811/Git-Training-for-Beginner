@@ -323,7 +323,7 @@ Feb 2021
         with:
           app-name: 'app-CloudWorkshop'
           slot-name: 'production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_070d73f773d6434689608ad093d6a436 }}
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_ここの値は環境によって変わります }}
           package: ${{env.DOTNET_ROOT}}/myapp
    ```
 
