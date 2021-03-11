@@ -120,7 +120,7 @@ Mar 2021
 
   ```text
   This first line is in file2
-  This line was added in branchA
+  This line was added in BranchA
   ```
 
   - Commit メッセージには作業内容をわかりやすく入力してください。
@@ -142,7 +142,7 @@ Mar 2021
 
   ```text
   This first line is in file2
-  This line was added in branchA
+  This line was added in BranchA
   ```
 
 - main に Commit が３つあり file1.txt の内容が以下の通りであること
@@ -158,15 +158,15 @@ Mar 2021
 
 ## Exercise 3 内容
 
-- Exercise 2 で作成した branchA ブランチを main ブランチへ merge してください。
-- merge 後、 branchA を削除してください。
+- Exercise 2 で作成した BranchA ブランチを main ブランチへ merge してください。
+- merge 後、 BranchA を削除してください。
 
 ## Exercise 3 達成条件
 
 - コーチが以下を確認して OK であること
 - merge が完了すること
   - Conflict が発生しなかったこと（口頭確認）
-- branchA が削除されていること
+- BranchA が削除されていること
 - file1.txt の内容が下記になっていること
 
   ```text
@@ -178,7 +178,7 @@ Mar 2021
 
 ```text
   first line in file2
-  This line was added in branchA
+  This line was added in BranchA
 ```
 
 ***
@@ -203,7 +203,7 @@ Mar 2021
 
     ```text
     This first line was added in main
-    This second line was added in branchB
+    This second line was added in BranchB
     ```
 
 - main ブランチへ切り替えて、file3.txt を次のように編集して　Commit してください。
@@ -211,32 +211,32 @@ Mar 2021
 
     ```text
     This first line was added in main
-    This Second line was added in main
+    This second line was added in main
     ```
 
-- branchB ブランチを main ブランチへ merge してください。
+- BranchB ブランチを main ブランチへ merge してください。
 - file3.txt のConflict を次のように解決してください。
 
     ```text
     This first line was added in main
-    This Second line was added in main
-    This third line was added in branchB
+    This second line was added in main
+    This third line was added in BranchB
     ```
 
 - merge 時の Commit メッセージは適切なものを自分で入力してください。
-- merge 後、 branchB を削除してください。
+- merge 後、 BranchB を削除してください。
 
 ## Exercise 4 達成条件
 
 - コーチが以下を確認して OK であること
 - Conflict を解決して merge が完了したこと
-- branchB が削除されていること
+- BranchB が削除されていること
 - file3.txt の内容が下記になっていること
 
   ```text
   This first line was added in main
   This second line was added in main
-  This third line was added in branchB
+  This third line was added in BranchB
   ```
 
 ***
@@ -253,18 +253,24 @@ Mar 2021
     ```text
     This first line was added in main
     This second line was added in main
-    This third line was added in branchB
-    This forth line was added in branchC
+    This third line was added in BranchB
+    This forth line was added in BranchC
     ```
 
 - main ブランチへ切り替えて BranchC を merge してください。
-- branchC を**削除しないで**残してください。
+- BranchC を**削除しないで**残してください。
 
 ## Exercise 5 達成条件
 
 - コーチが以下を確認して OK であること
-- merge Commit が発生していないこと
-- main と branchC が一番最新 Commit であること
+- Fast-forward merge だったこと
+  - コマンドで確認
+
+    ```text
+    git reflog
+    ```
+
+- main と BranchC が一番最新 Commit であること
 
 ***
 
@@ -283,7 +289,7 @@ Mar 2021
   - ローカルリポジトリとリモートリポジトリを紐づけてください。
     - リモート名は origin としてください。
 
-- 紐づけを確認するためにローカルリポジトリで Commit した結果を Push してください。
+- 紐づけを確認するためにローカルリポジトリで Commit した結果を **Push** してリモートと同期してください。
   - 最初の Commit は空の Commit を入れてください。
     - Commit メッセージは以下にしてください。
 
@@ -324,7 +330,7 @@ Mar 2021
 
 - ローカルリポジトリで作業してリモートへ Push してください。
   - 新しく作成したローカルリポジトリで Branch を作成してください。
-    - Branch 名は branchD としてください。
+    - Branch 名は BranchD としてください。
   - file4.txt を次の内容で編集して Commit して Push してください。
 
     ```text
@@ -332,12 +338,13 @@ Mar 2021
     This second line was added in clonedRepo
     ```
 
-- Exercise 6 のローカルリポジトリで Pull を行い、ClonedRepos内部での更新が反映されたことを確認してください。
+- Exercise 6 のローカルリポジトリで origin/BranchD が存在することを確認したら BranchD を Checkout して編集可能な状態にしてください。
 
 ## Exercise 7 達成条件
 
 - コーチが以下を確認して OK であること
-- ClonedRepos に remoteRepo フォルダが Git リポジトリとして作成されており、 Commit 履歴が Exercise 6 と同じであること
+- ClonedRepos に remoteRepo フォルダが Git リポジトリとして作成されていること
+- Commit 履歴は BranchD と origin/BranchD が最新であること
 - Clone した remoteRepo の origin が Exercise 6 のリモートリポジトリであること
   - コマンドで確認すること
 
@@ -353,7 +360,7 @@ Mar 2021
 
 ## Exercise 8 内容
 
-- localRepo1 で Commit して Push してください。
+- localRepo1 の BranchD にて Commit して Push してください。
   - file4.txt を次の内容に編集して Commit, Push してください。
 
     ```text
@@ -370,7 +377,8 @@ Mar 2021
 
 - コーチが以下を確認して OK であること
 - localRepo1, ClonedRepos 配下の remoteRepo 共に最新の Commit が Revert であること
-- file4.txt の内容が以下であること
+- revert 前の file4.txt の内容が以下であること
+- revert 後の file4.txt の内容が以下であること
 
   ```text
   This first line was added in main
@@ -405,28 +413,29 @@ Mar 2021
     ```
 
 - 2つ目の Commit から Branch を切ってください。
-  - Branch 名は branchE です。
+  - Branch 名は BranchE です。
 
 - 3つ目の Commit について
-  - branchE で 作業してください。
+  - BranchE で 作業してください。
   - file5.txt を以下の内容に編集して Commit してください。
 
     ```text
     This first line is in file5
-    This second line is in branchE
+    This second line is in BranchE
     ```
 
-- 3つ目の Commit を削除してください。
+- 3つ目の Commit を reset で削除してください。
 - ただし、Workspace に file5.txt の編集結果は残った状態にしてください。
 
 ## Exercise 9 達成条件
 
 - コーチが以下を確認して OK であること
+- file5.txt への変更が Stage 前の状態であること
 - file5.txt の内容が以下の通りであること
 
   ```text
   This first line is in file5
-    This second line in branchE
+  This second line in BranchE
   ```
 
 - Commit 後に reset した結果が残っていること
@@ -451,14 +460,14 @@ Mar 2021
 
 - Exercise 9 の リポジトリを使用します。
   - ※ コーチの確認によって、reset 前の状態に戻っていることを確認してください。
-- main ブランチに切り替えて file5.txt を以下の内容で編集します。
+- main ブランチに切り替えて file5.txt を以下の内容で編集して Commit してください。
 
   ```text
   This first line is in file5
   This second line is in main
   ```
 
-- branchE を main ブランチへ merge してください。
+- BranchE を main ブランチへ merge してください。
 - Conflict したことを確認してください。
 
 - **Conflict していることをコーチに確認してもらってから先へ進んでください**
@@ -468,7 +477,14 @@ Mar 2021
 ## Exercise 10 達成条件
 
 - コーチが以下を確認して OK であること
-- main と branchE が 最初から数えて2番目の Commit で分岐していること
+- main と BranchE が 最初から数えて2番目の Commit で分岐していること
+- 最後の Commit への操作が reset であること
+  - コマンドで確認
+
+    ```text
+    git reflog
+    ```
+
 - main ブランチの file5.txt の内容が以下の通りであること
 
   ```text
@@ -476,11 +492,11 @@ Mar 2021
   This second line is in main
   ```
 
-- branchE の file5.txt の内容が以下の通りであること
+- BranchE の file5.txt の内容が以下の通りであること
 
   ```text
   This first line is in file5
-    This second line in branchE
+  This second line in BranchE
   ```
 
 ***
@@ -523,7 +539,7 @@ Mar 2021
 
 - 最初の Commit に対して Branch を作るべきでした。下図と同じ結果となるように Commit を修正してください。
 
-  <img width=230px src="images/gitExercise-Ex11.png" />
+  <img width=230px src="images-exercise/gitExercise-Ex11.png" />
 
 ## Exercise 11 達成条件
 
