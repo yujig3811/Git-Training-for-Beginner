@@ -449,7 +449,8 @@ Mar 2021
   - コマンドで確認
 
     ```text
-    git reset --hard HEAD@{1}
+    Linux : git reset --hard HEAD@{1}
+    Windows : git reset --hard 'HEAD@{1}'
     ```
 
 ***
