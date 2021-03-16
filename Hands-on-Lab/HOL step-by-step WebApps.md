@@ -8,7 +8,7 @@ Feb 2021
 **Contents**
 - [GitHub リポジトリのフォーク](#GitHub-リポジトリのフォーク)
 
-- [Web Apps の作成～アプリケーションの展開](#Azure-Web-Apps-の作成～アプリケーションの展開)
+- Web Apps の作成～アプリケーションの展開
 
   - [リソース グループの作成](#リソース-グループの作成)
 
@@ -18,7 +18,7 @@ Feb 2021
 
   - [GitHub Actions ワークフローの構成](#GitHub-Actions-ワークフローの構成)
 
-- [Web アプリの更新～展開, KeyVault 参照の使用](#Web-アプリの更新～展開,-KeyVault-参照の使用)
+- Web アプリの更新～展開, KeyVault 参照の使用
 
   - リポジトリのクローン
 
@@ -26,7 +26,7 @@ Feb 2021
 
     - [Visual Studio](#リポジトリの複製--Visual-Studio)
 
-  - [ブランチの作成、Web アプリの更新～GitHub リポジトリへのプッシュ](#ブランチの作成、Web-アプリの更新～GitHub-リポジトリへのプッシュ)
+  - ブランチの作成、Web アプリの更新～GitHub リポジトリへのプッシュ
 
     - ブランチの作成
 
@@ -46,7 +46,7 @@ Feb 2021
 
       - [Visual Studio](#リモート-リポジトリへのプッシュ--Visual-Studio)
 
-  - [Pull Request の作成、マージ～アプリケーションの展開](#Pull-Request-の作成、マージ～アプリケーションの展開)
+  - [Pull Request の作成](#Pull-Request-の作成)
 
   - [Web Apps の構成](#アプリケーション構成)
 
@@ -470,7 +470,7 @@ Feb 2021
 
 <br />
 
-## ブランチの作成、Web アプリの更新～GitHub リポジトリへのプッシュ
+## ブランチの作成
 
 ### ブランチ作成 -Visual Studio Code
 
@@ -515,6 +515,8 @@ Feb 2021
 [次の手順: アプリケーションの更新](#アプリケーションの更新--Visual-Studio)
 
 <br />
+
+## アプリケーションの更新
 
 ### アプリケーションの更新 -Visual Studio Code
 
@@ -658,6 +660,8 @@ Feb 2021
 
 <br />
 
+## リモート リポジトリへのプッシュ
+
 ### リモート リポジトリへのプッシュ -Visual Studio Code
 
 - 画面左のアイコンをクリックし "**Source Control**" へ移動  
@@ -703,7 +707,7 @@ Feb 2021
 
 <br />
 
-## Pull Request の作成、マージ～アプリケーションの展開
+## Pull Request の作成
 
 - 自身の GitHub アカウントの fork したリポジトリを表示
 
