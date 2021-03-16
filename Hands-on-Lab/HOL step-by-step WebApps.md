@@ -719,8 +719,6 @@ Feb 2021
 
   <img src="images/github-pull-request-02.png" />
 
-  > **マージ先は Fork 元ではなく自身のリポジトリの main ブランチを選択すること**
-
 - "Merge pull request" をクリック
 
   <img src="images/github-pull-request-03.png" />
