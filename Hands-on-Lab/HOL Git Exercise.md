@@ -406,34 +406,33 @@ Mar 2021
   - ローカルリポジトリは C:\gitroot フォルダ配下に作成してください。
     - ローカルリポジトリ名は secondRepo としてください。
   - Commit を３つ作ってください。
-  - main の1つ目の Commit は空 Commit にしてください。
-    - Commit メッセージは以下にしてください。
+    - main の1つ目の Commit は空 Commit にしてください。
+      - Commit メッセージは以下にしてください。
 
-      ```text
-      first commit
-      ```
+        ```text
+        first commit
+        ```
+    - 2つ目の Commit について
+      - main ブランチで作業してください。
+      - 新しくファイルを作成してください。
+      - 作成するファイル名は file5.txt としてください。
+      - file5.txt は以下の内容で Commit してください。
 
-- 2つ目の Commit について
-  - main ブランチで作業してください。
-  - 新しくファイルを作成してください。
-  - 作成するファイル名は file5.txt としてください。
-  - file5.txt は以下の内容で Commit してください。
+        ```text
+        This first line is in file5
+        ```
 
-    ```text
-    This first line is in file5
-    ```
+    - 2つ目の Commit から Branch を切ってください。
+      - Branch 名は BranchE です。
 
-- 2つ目の Commit から Branch を切ってください。
-  - Branch 名は BranchE です。
+    - 3つ目の Commit について
+      - BranchE で 作業してください。
+      - file5.txt を以下の内容に編集して Commit してください。
 
-- 3つ目の Commit について
-  - BranchE で 作業してください。
-  - file5.txt を以下の内容に編集して Commit してください。
-
-    ```text
-    This first line is in file5
-    This second line is in BranchE
-    ```
+        ```text
+        This first line is in file5
+        This second line is in BranchE
+        ```
 
 - 3つ目の Commit を reset で削除してください。
 - ただし、Workspace に file5.txt の編集結果は残った状態にしてください。
@@ -523,31 +522,31 @@ Mar 2021
   - ローカルリポジトリは C:\gitroot フォルダ配下に作成してください。
     - ローカルリポジトリ名は thirdRepo としてください。
   - Commit を３つ作ってください。
-  - main の1つ目の Commit は空 Commit にしてください。
-    - Commit メッセージは以下にしてください。
+    - main の1つ目の Commit は空 Commit にしてください。
+      - Commit メッセージは以下にしてください。
 
-      ```text
-      first commit
-      ```
+        ```text
+        first commit
+        ```
 
-- 2つ目の Commit について
-  - main ブランチで作業してください。
-  - 新しくファイルを作成してください。
-  - 作成するファイル名は file6.txt としてください。
-  - file6.txt は以下の内容で Commit してください。
+    - 2つ目の Commit について
+      - main ブランチで作業してください。
+      - 新しくファイルを作成してください。
+      - 作成するファイル名は file6.txt としてください。
+      - file6.txt は以下の内容で Commit してください。
 
-    ```text
-    This is the first line
-    ```
+        ```text
+        This is the first line
+        ```
 
-- 3つ目の Commit について
-  - main ブランチで作業してください。
-  - file6.txt を以下の内容で Commit してください。
+    - 3つ目の Commit について
+      - main ブランチで作業してください。
+      - file6.txt を以下の内容で Commit してください。
 
-    ```text
-    This is the first line
-    This is the second line
-    ```
+        ```text
+        This is the first line
+        This is the second line
+        ```
 
 - **Commit が3つできていることをコーチに確認してもらってから先へ進んでください**
 
