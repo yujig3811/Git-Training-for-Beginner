@@ -23,8 +23,8 @@ namespace Web.Controllers
 
         public IActionResult Index()
         {
-            //var myKeyValue = _configuration.GetValue<string>("MyKey");
-            //ViewData["MyKey"] = myKeyValue;
+            var myKeyValue = _configuration.GetValue<string>("MyKey");
+            ViewData["MyKey"] = myKeyValue;
 
             return View();
         }
